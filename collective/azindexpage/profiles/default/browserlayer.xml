@@ -1,0 +1,4 @@
+<layers>
+    <layer name="collective.azindexpage"
+           interface="collective.azindexpage.browser.interfaces.ILayer" />
+</layers>
