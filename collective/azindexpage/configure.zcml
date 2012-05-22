@@ -19,6 +19,10 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <include package=".upgrades" />
-
+  <include package="archetypes.schemaextender" />
+  <adapter
+    factory=".keywords.AZIndexExtender"
+    provides="archetypes.schemaextender.interfaces.ISchemaExtender"/>
+  <adapter factory=".keywords.AZIndex" name="AZIndex" />
 
 </configure>

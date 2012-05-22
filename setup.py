@@ -28,6 +28,7 @@ setup(name='collective.azindexpage',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'archetypes.linguakeywordwidget',
           # -*- Extra requirements: -*-
       ],
       extras_require = dict(

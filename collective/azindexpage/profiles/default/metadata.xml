@@ -2,6 +2,6 @@
 <metadata>
   <version>1000</version>
   <dependencies>
-    <!--<dependency>profile-xxx:default</dependency>-->
+    <dependency>profile-archetypes.linguakeywordwidget:default</dependency>
   </dependencies>
 </metadata>
