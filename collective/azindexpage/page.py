@@ -56,7 +56,7 @@ class AZIndexPage(BrowserView):
 
         if not self._azwords:
             for word in self._words:
-                letter = word[0].lower() #TODO: normalize
+                letter = word[0].lower()  # TODO: normalize
                 if letter not in self._azwords:
                     self._azwords[letter] = []
                 self._azwords[letter].append(word)
