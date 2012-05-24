@@ -1,7 +1,7 @@
 from Products.CMFCore.utils import getToolByName
+PROFILE = 'profile-collective.azindexpage:default'
 
-def upgrade_1000_to_1001(context):
+
+def common(context):
     setup = getToolByName(context, 'portal_setup')
-#    setup.runImportStepFromProfile('profile-collective.azindexpage:default',
-#                                   'jsregistry', run_dependencies=False,
-#                                   purge_old=False)
+    setup.runAllImportStepsFromProfile(PROFILE)

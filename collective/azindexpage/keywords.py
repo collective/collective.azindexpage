@@ -55,7 +55,6 @@ class AZIndexExtender(object):
 
         @return: Dictionary of reordered field lists per schemata.
         """
-        #schematas["settings"] = ['effectiveDate', 'revisitDate', 'expirationDate', 'creation_date', 'modification_date']
 
         return schematas
 

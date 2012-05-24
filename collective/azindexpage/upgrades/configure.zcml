@@ -3,12 +3,12 @@
     i18n_domain="collective.azindexpage">
 
     <upgradeStep
-        source="1000"
-        destination="1001"
-        title="Upgrade"
+        source="*"
+        destination="1002"
+        title="Common upgrade"
         description=""
         profile="collective.azindexpage:default"
-        handler=".v1x.upgrade_1000_to_1001"
+        handler=".v1x.common"
         />
 
 </configure>
