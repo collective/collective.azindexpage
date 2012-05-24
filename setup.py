@@ -17,10 +17,10 @@ setup(name='collective.azindexpage',
         "Framework :: Plone :: 4.1",
         "Framework :: Plone :: 4.2",
         ],
-      keywords='',
-      author='',
-      author_email='',
-      url='http://svn.plone.org/svn/collective/',
+      keywords='plone lingua index',
+      author='JeanMichel FRANCOIS aka toutpt',
+      author_email='toutpt@gmail.com',
+      url='https://github.com/toutpt/collective.azindexpage',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['collective'],
@@ -31,9 +31,7 @@ setup(name='collective.azindexpage',
           'archetypes.linguakeywordwidget',
           # -*- Extra requirements: -*-
       ],
-      extras_require = dict(
-          tests=['plone.app.testing'],
-      ),
+      extras_require={"tests": ['plone.app.testing']},
       entry_points="""
       # -*- Entry points: -*-
       [z3c.autoinclude.plugin]
