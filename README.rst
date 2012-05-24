@@ -15,7 +15,8 @@ How it works
 ============
 
 It extends default schema of Plone content types to provide a new field
-'include this page in index' using an improved keyword field & widget.
+'include this page in index' using an improved keyword field & widget
+using archetypes.linguakeywordwidget_.
 
 Credits
 =======
@@ -44,3 +45,4 @@ Authors
 .. |makinacom| image:: http://depot.makina-corpus.org/public/logo.gif
 .. _makinacom:  http://www.makina-corpus.com
 .. _documentation: http://plone.org/documentation/kb/installing-add-ons-quick-how-to
+.. _archetypes.linguakeywordwidget: http://pypi.python.org/pypi/archetypes.linguakeywordwidget
