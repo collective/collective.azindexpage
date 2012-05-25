@@ -9,6 +9,7 @@
     i18n_domain="collective.azindexpage">
 
   <include package="plone.app.contentmenu"/>
+  <include package="archetypes.linguakeywordwidget"/>
   <include package=".browser" />
 
   <i18n:registerTranslations directory="locales" />

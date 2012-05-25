@@ -1,30 +1,31 @@
 import transaction
 import unittest2 as unittest
-from zope import interface
-from plone.app import testing
+from plone.app import testing as ptesting
 from collective.azindexpage import testing
+
 
 class UnitTestCase(unittest.TestCase):
 
     def setUp(self):
         pass
 
+
 class IntegrationTestCase(unittest.TestCase):
 
-    layer = layer.INTEGRATION
+    layer = testing.INTEGRATION
 
     def setUp(self):
-        super(TestCase, self).setUp()
+        super(IntegrationTestCase, self).setUp()
         self.portal = self.layer['portal']
-        testing.setRoles(self.portal, testing.TEST_USER_ID, ['Manager'])
+        ptesting.setRoles(self.portal, ptesting.TEST_USER_ID, ['Manager'])
         self.portal.invokeFactory('Folder', 'test-folder')
-        testing.setRoles(self.portal, testing.TEST_USER_ID, ['Member'])
+        ptesting.setRoles(self.portal, ptesting.TEST_USER_ID, ['Member'])
         self.folder = self.portal['test-folder']
 
 
 class FunctionalTestCase(IntegrationTestCase):
 
-    layer = layer.FUNCTIONAL
+    layer = testing.FUNCTIONAL
 
     def setUp(self):
         #we must commit the transaction
