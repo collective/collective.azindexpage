@@ -20,19 +20,16 @@
       description='Extension profile'
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+  <genericsetup:importStep
+        name="collective.azindexpage"
+        title="collective.azindexpage reindex AZIndex"
+        description=""
+        handler="collective.azindexpage.setuphandlers.setupVarious" />
+        />
   <include package=".upgrades" />
   <include package="archetypes.schemaextender" />
   <adapter
     factory=".keywords.AZIndexExtender"
     provides="archetypes.schemaextender.interfaces.ISchemaExtender"/>
   <adapter factory=".keywords.AZIndex" name="AZIndex" />
-  <browser:page
-    name="azindexpage"
-    menu="plone_displayviews"
-    title="A-Z Index page"
-    for="*"
-    class=".page.AZIndexPage"
-    template="page.pt"
-    permission="zope2.View"
-    />
 </configure>

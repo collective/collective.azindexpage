@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="collective.googledocsviewer">
+<body>
+
+ <div metal:fill-slot="content-core">
+  <div id="azindexpage">
+     <ul class="aztabs">
+        <tal:letters tal:repeat="letter view/get_letters">
+          <tal:words tal:define="words python:view.get_words(letter); haswords python:bool(words) and 'haswords' or 'noword';">
+            <li tal:attributes="class string:${haswords}"><a class="letter-link" tal:attributes="href string:#letter-${letter};" tal:content="letter"></a></li>
+          </tal:words>
+        </tal:letters>
+     </ul>
+     <tal:letters tal:repeat="letter view/get_letters">
+      <tal:words tal:define="words python:view.get_words(letter); haswords python:bool(words) and 'haswords' or 'noword';">
+        <div tal:attributes="class string:azpanes ${haswords}">
+          <div class="azpane">
+          <span tal:condition="not:words" i18n:translate="">Empty pane</span>
+          <tal:words tal:repeat="word words">
+            <ul class="azpaneword">
+             <li><span tal:content="word">word</span>:
+              <ul class="azpages">
+               <li class="azpage" tal:repeat="page python:view.get_pages_for(word)">
+                <a tal:attributes="href page/URL; title page/description" tal:content="page/title">title</a>
+               </li>
+              </ul>
+             </li>
+           </ul>
+          </tal:words>
+          </div>
+        </div>
+       </tal:words>
+      </tal:letters>
+  </div>
+ <script>
+</script>
+</div>
+</body>
+</html>

@@ -7,25 +7,24 @@
       interface=".interfaces.ILayer"
       name="collective.azindexpage"
       />
-  
-  
-  <!-- EXAMPLE:
-  <browser:viewlet
-      name="collective.someviewlet"
-      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
-      class=".viewlets.MyViewlet"
-      layer=".interfaces.ILayer"
-      permission="zope2.View"
-      />
-  <include package="plone.app.contentmenu" />
+
   <browser:page
-      name="myview"
-      menu="plone_displayviews"
-      title="Galleria"
-      class=".myfile.MyView"
-      layer=".interfaces.ILayer"
-      permission="zope2.View"
-      />
-  -->
+    name="azindexpage"
+    menu="plone_displayviews"
+    title="A-Z Index page"
+    for="*"
+    class=".page.AZIndexPage"
+    template="page.pt"
+    permission="zope2.View"
+    />
+
+  <browser:resource
+    name="azindexpage.css"
+    file="page.css"
+    />
+  <browser:resource
+    name="azindexpage.js"
+    file="page.js"
+  />
 
 </configure>
