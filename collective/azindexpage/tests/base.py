@@ -19,6 +19,8 @@ class IntegrationTestCase(unittest.TestCase):
         self.portal = self.layer['portal']
         ptesting.setRoles(self.portal, ptesting.TEST_USER_ID, ['Manager'])
         self.portal.invokeFactory('Folder', 'test-folder')
+        self.portal['test-folder'].setTitle('Test folder')
+        self.portal['test-folder'].reindexObject()
         ptesting.setRoles(self.portal, ptesting.TEST_USER_ID, ['Member'])
         self.folder = self.portal['test-folder']
 

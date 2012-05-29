@@ -66,12 +66,6 @@ class AZIndexPage(BrowserView):
 
         self.updated = True
 
-    def get_raw_words(self):
-        if not self.updated:
-            self.update()
-
-        return self._words
-
     def get_words(self, letter):
         if not self.updated:
             self.update()
@@ -85,7 +79,8 @@ class AZIndexPage(BrowserView):
         return self._azwords
 
     def get_letters(self):
-        return map(chr, range(97, 123))
+        return ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+        'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
     def get_pages_for(self, word):
         if not self.updated:
