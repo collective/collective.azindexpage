@@ -37,6 +37,9 @@ class AZIndexPage(BrowserView):
 
     def update(self):
 
+        if self.updated:
+            return
+
         if not self._language:
             cstate = component.getMultiAdapter((self.context, self.request),
                                                name=u'plone_portal_state')

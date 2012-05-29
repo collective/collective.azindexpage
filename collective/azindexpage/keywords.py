@@ -69,6 +69,8 @@ class AZIndexExtender(object):
 def AZIndex(obj):
     """Is this the default page in its folder
     """
+    if not hasattr(obj, 'getField'):
+        return []
     field = obj.getField('azindex')
     if field is None:
         return []
