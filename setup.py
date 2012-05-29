@@ -31,7 +31,7 @@ setup(name='collective.azindexpage',
           'archetypes.linguakeywordwidget',
           # -*- Extra requirements: -*-
       ],
-      extras_require={"tests": ['plone.app.testing']},
+      extras_require={"tests": ['plone.app.testing', 'pyquery']},
       entry_points="""
       # -*- Entry points: -*-
       [z3c.autoinclude.plugin]

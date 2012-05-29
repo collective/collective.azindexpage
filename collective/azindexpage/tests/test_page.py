@@ -104,5 +104,32 @@ class IntegrationTestAZIndexPage(base.IntegrationTestCase):
         self.assertEqual(page["URL"], self.folder.absolute_url())
 
 
+class FunctionalTestAZIndexPage(base.FunctionalTestCase):
+
+    def test_write_content(self):
+        self.setRole('Manager')
+        self.browser.getLink('Test folder').click()
+        self.browser.getLink('Edit').click()
+        # only manager and reviewer can add keywords:
+        keywords = "keyword 1\nfoo\nbar"
+        self.browser.getControl(name="azindex_keywords:lines").value = keywords
+        self.browser.getControl("Save").click()
+
+        self.browser.getLink('Page').click()
+        self.browser.getControl('Title').value = "Index Page"
+        self.browser.getControl("Save").click()
+        self.browser.getLink('A-Z Index page').click()
+
+        self.assertIn("""<ul class="aztabs">""", self.browser.contents)
+        self.assertElement("#azindexpage")
+        self.assertElement(".aztabs", length=1)
+        self.assertElement(".haswords", length=6)  # 2x(letters)
+        self.assertElement(".noword", length=46)  # 2x(26-letters)
+        self.assertElement(".azpane")
+        self.assertElement(".azpaneword")
+        self.assertElement(".azpages", length=3)
+        self.assertElement(".azpage a", length=3)
+
+
 def test_suite():
     return unittest.defaultTestLoader.loadTestsFromName(__name__)
