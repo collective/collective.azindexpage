@@ -39,6 +39,7 @@ Authors
 
 .. Contributors
 
+.. _index: http://en.wikipedia.org/wiki/Index_(publishing)
 .. |cirb| image:: http://www.cirb.irisnet.be/logo.jpg
 .. _cirb: http://cirb.irisnet.be
 .. _sitemap: http://support.google.com/webmasters/bin/answer.py?hl=en&answer=183668&topic=8476&ctx=topic
