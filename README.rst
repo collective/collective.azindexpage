@@ -26,12 +26,12 @@ Companies
 
 |cirb|_ CIRB / CIBG
 
-* `Contact us <mailto:irisline@irisnet.be>`_
+* `Contact CIRB <mailto:irisline@irisnet.be>`_
 
 |makinacom|_
 
-  * `Planet Makina Corpus <http://www.makina-corpus.org>`_
-  * `Contact us <mailto:python@makina-corpus.org>`_
+* `Planet Makina Corpus <http://www.makina-corpus.org>`_
+* `Contact Makina Corpus <mailto:python@makina-corpus.org>`_
 
 Authors
 
