@@ -16,6 +16,9 @@ from archetypes.linguakeywordwidget.widget import LinguaKeywordWidget
 from zope import i18nmessageid
 _ = i18nmessageid.MessageFactory('collective.azindexpage')
 
+#Load template translations
+_(u"Empty pane")
+
 
 class ExtensionLinesField(ExtensionField, atapi.LinesField):
     """MultiLingual LinesField"""

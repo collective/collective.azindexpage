@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2012-07-05 16:44+0000\n"
+"POT-Creation-Date: 2012-07-10 13:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,15 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: collective.azindexpage\n"
 
-#: ./keywords.py:42
+#: ./keywords.py:45
 msgid "A-Z Index page"
 msgstr ""
 
-#: ./keywords.py:43
+#: ./keywords.py:20
+msgid "Empty pane"
+msgstr ""
+
+#: ./keywords.py:46
 msgid "Select keywords to include this page in index"
 msgstr ""
 
