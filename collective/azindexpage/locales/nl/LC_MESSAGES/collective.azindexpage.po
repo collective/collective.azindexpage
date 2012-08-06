@@ -19,13 +19,12 @@ msgstr ""
 
 #: ./keywords.py:45
 msgid "A-Z Index page"
-msgstr ""
+msgstr "A-Z Indexpagina"
 
 #: ./keywords.py:20
 msgid "Empty pane"
-msgstr ""
+msgstr "Leeg vak"
 
 #: ./keywords.py:46
 msgid "Select keywords to include this page in index"
-msgstr ""
-
+msgstr "Selecteer trefwoorden om deze pagina in de index op te nemen"

@@ -5,6 +5,7 @@ Changelog
 ------------------
 
 - Fix JS error preventDefault
+- update NL language
 
 
 1.0b2 (2012-07-03)
