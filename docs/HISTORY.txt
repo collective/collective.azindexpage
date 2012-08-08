@@ -4,8 +4,8 @@ Changelog
 1.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Add ramcache for words + purge the cache (memoize) when page added to the index.
+  [toutpt]
 
 1.0.1 (2012-08-07)
 ------------------

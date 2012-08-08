@@ -1,7 +1,20 @@
-from Products.Five.browser import BrowserView
+#python
+import logging
+
+#zope
 from zope import interface
 from zope import component
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from Products.Five.browser import BrowserView
+
+#CMF
 from Products.CMFCore.utils import getToolByName
+
+#plone
+from plone.memoize import ram
+from plone.memoize.interfaces import ICacheChooser
+
+logger = logging.getLogger('collective.azindex')
 
 
 class IAZIndexPageHelper(interface.Interface):
@@ -22,9 +35,16 @@ class IAZIndexPageHelper(interface.Interface):
         """Return full URL to search for items with that words"""
 
 
+def get_pages_for_cachekey(method, self, word):
+    #the cache depends on the word and the language
+    #when a word is added the cache will be purged
+    return '%s-%s' % (self._language, word)
+
+
 class AZIndexPage(BrowserView):
     """A-Z index page"""
     interface.implements(IAZIndexPageHelper)
+    index = ViewPageTemplateFile('page.pt')
 
     def __init__(self, context, request):
         self.context = context
@@ -34,6 +54,10 @@ class AZIndexPage(BrowserView):
         self._words = []
         self._azwords = {}
         self.updated = False
+
+    def __call__(self):
+        self.update()
+        return self.index()
 
     def update(self):
 
@@ -67,24 +91,17 @@ class AZIndexPage(BrowserView):
         self.updated = True
 
     def get_words(self, letter):
-        if not self.updated:
-            self.update()
-
         return self._azwords.get(letter)
 
     def get_az_words(self):
-        if not self.updated:
-            self.update()
-
         return self._azwords
 
     def get_letters(self):
         return ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
         'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
+    @ram.cache(get_pages_for_cachekey)
     def get_pages_for(self, word):
-        if not self.updated:
-            self.update()
 
         query = {'AZIndex': '%s-%s' % (self._language, word)}
         brains = self._catalog(**query)
@@ -96,3 +113,13 @@ class AZIndexPage(BrowserView):
                 'description': brain.Description})
 
         return pages
+
+
+def page_added(ob, event):
+    #When a page is added we need to purge the cache
+    keywords = ob.getField("azindex").get(ob)
+    cachekey = 'collective.azindexpage.browser.page.get_pages_for'
+    cache = component.queryUtility(ICacheChooser)(cachekey)
+    for keyword in keywords:
+        cache['%s:%s' % (cachekey, keyword)] = ram.MARKER
+        logger.info('invalidate cache for word %s' % keyword)

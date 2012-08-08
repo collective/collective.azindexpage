@@ -14,7 +14,6 @@
     title="A-Z Index page"
     for="*"
     class=".page.AZIndexPage"
-    template="page.pt"
     permission="zope2.View"
     />
 
@@ -26,5 +25,8 @@
     name="azindexpage.js"
     file="page.js"
   />
-
+  <subscriber
+     for="Products.Archetypes.interfaces.IBaseObject
+          zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+     handler=".page.page_added" />
 </configure>
