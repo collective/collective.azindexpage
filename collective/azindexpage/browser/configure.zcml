@@ -15,15 +15,18 @@
     for="*"
     class=".page.AZIndexPage"
     permission="zope2.View"
+    layer=".interfaces.ILayer"
     />
 
   <browser:resource
     name="azindexpage.css"
     file="page.css"
+    layer=".interfaces.ILayer"
     />
   <browser:resource
     name="azindexpage.js"
     file="page.js"
+    layer=".interfaces.ILayer"
   />
   <subscriber
      for="Products.Archetypes.interfaces.IBaseObject

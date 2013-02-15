@@ -18,6 +18,7 @@ _ = i18nmessageid.MessageFactory('collective.azindexpage')
 
 #Load template translations
 _(u"Empty pane")
+azindex_help = _(u"Select keywords to include this page in index")
 
 
 class ExtensionLinesField(ExtensionField, atapi.LinesField):
@@ -38,12 +39,13 @@ class AZIndexExtender(object):
     layer = ILayer
 
     fields = [
-        ExtensionLinesField("azindex",
+        ExtensionLinesField(
+            "azindex",
             schemata="settings",
             accessor="AZIndex",
             widget=LinguaKeywordWidget(
-              label=_(u"A-Z Index page"),
-              description=_(u"Select keywords to include this page in index"),
+                label=_(u"A-Z Index page"),
+                description=azindex_help,
             ),
         )
     ]

@@ -11,8 +11,12 @@ from Products.Five.browser import BrowserView
 from Products.CMFCore.utils import getToolByName
 
 #plone
+from plone.browserlayer import utils
 from plone.memoize import ram
 from plone.memoize.interfaces import ICacheChooser
+
+#internal
+from collective.azindexpage.browser.interfaces import ILayer
 
 logger = logging.getLogger('collective.azindex')
 
@@ -97,8 +101,10 @@ class AZIndexPage(BrowserView):
         return self._azwords
 
     def get_letters(self):
-        return ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-        'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+        return [
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+        ]
 
     @ram.cache(get_pages_for_cachekey)
     def get_pages_for(self, word):
@@ -108,16 +114,23 @@ class AZIndexPage(BrowserView):
         pages = []
 
         for brain in brains:
-            pages.append({'URL': brain.getURL(),
+            pages.append({
+                'URL': brain.getURL(),
                 'title': brain.Title,
-                'description': brain.Description})
+                'description': brain.Description
+            })
 
         return pages
 
 
 def page_added(ob, event):
     #When a page is added we need to purge the cache
-    keywords = ob.getField("azindex").get(ob)
+    if ILayer not in utils.registered_layers():
+        return
+    field = ob.getField("azindex")
+    if not field:
+        return
+    keywords = field.get(ob)
     cachekey = 'collective.azindexpage.browser.page.get_pages_for'
     cache = component.queryUtility(ICacheChooser)(cachekey)
     for keyword in keywords:
