@@ -9,6 +9,9 @@ Changelog
   sites where other schemaextender adapters are present
   [keul]
 - Minimal CSS Sunburst fixes [keul]
+- Prevent flickering effect when loading large AZ-index page;
+  display aztabs after tabs generation
+  [keul]
 
 1.0.3 (2013-02-15)
 ------------------
