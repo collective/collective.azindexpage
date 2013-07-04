@@ -18,7 +18,7 @@
       name="default"
       title="collective.azindexpage"
       directory="profiles/default"
-      description='Extension profile'
+      description="Create a A-Z index page"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <genericsetup:importStep
@@ -30,6 +30,7 @@
   <include package=".upgrades" />
   <include package="archetypes.schemaextender" />
   <adapter
+    name="azindex"
     factory=".keywords.AZIndexExtender"
     provides="archetypes.schemaextender.interfaces.ISchemaExtender"/>
   <adapter factory=".keywords.AZIndex" name="AZIndex" />

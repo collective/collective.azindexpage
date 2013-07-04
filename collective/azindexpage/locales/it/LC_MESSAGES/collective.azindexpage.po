@@ -1,0 +1,31 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2012-07-10 13:38+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: Luca Fabbri <keul@redturtle.it>\n"
+"Language-Team: RedTurtle Technology <sviluppoplone@redturtle.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: it\n"
+"Language-Name: Italian\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.azindexpage\n"
+
+#: ./keywords.py:45
+msgid "A-Z Index page"
+msgstr "Pagina indice A-Z"
+
+#: ./keywords.py:20
+msgid "Empty pane"
+msgstr "Pannello vuoto"
+
+#: ./keywords.py:46
+msgid "Select keywords to include this page in index"
+msgstr "Seleziona le parole chiave per includere questa pagina nell'indice"
+

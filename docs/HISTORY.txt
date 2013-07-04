@@ -4,8 +4,10 @@ Changelog
 1.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Added italian translation [keul]
+- Schemaextender is now a named adapter. This fix problems in
+  sites where other schemaextender adapters are present
+  [keul]
 
 1.0.3 (2013-02-15)
 ------------------
