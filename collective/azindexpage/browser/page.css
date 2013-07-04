@@ -2,7 +2,7 @@
     text-align: center;
     font-size: 120%;
 }
-.aztabs li{
+#content .aztabs li{
     display: inline-block;
     padding-right: 1em;
 }
@@ -11,7 +11,10 @@
     cursor: default;
     pointer-events: none;
 }
-.haswords .current{
+#content .haswords{
+    font-size: 130%;
+}
+#content .haswords .current{
     font-weight: bold;
     border: 1px solid
 }

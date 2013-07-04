@@ -8,6 +8,7 @@ Changelog
 - Schemaextender is now a named adapter. This fix problems in
   sites where other schemaextender adapters are present
   [keul]
+- Minimal CSS Sunburst fixes [keul]
 
 1.0.3 (2013-02-15)
 ------------------
