@@ -5,11 +5,15 @@ Changelog
 ------------------
 
 - Added Spanish translation [macagua]
-- Added italian translation [keul]
+- Added Italian translation [keul]
 - Schemaextender is now a named adapter. This fix problems in
   sites where other schemaextender adapters are present
   [keul]
 - Minimal CSS Sunburst fixes [keul]
+- Added a log message when performing new index reindex operation
+  [keul]
+- Import step dependency: be sure that catalog GS import step is run before
+  [keul]
 
 1.0.3 (2013-02-15)
 ------------------

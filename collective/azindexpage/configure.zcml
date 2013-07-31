@@ -25,8 +25,10 @@
         name="collective.azindexpage"
         title="collective.azindexpage reindex AZIndex"
         description=""
-        handler="collective.azindexpage.setuphandlers.setupVarious" />
-        />
+        handler="collective.azindexpage.setuphandlers.setupVarious"
+        >
+      <depends name="catalog"/>
+  </genericsetup:importStep>
   <include package=".upgrades" />
   <include package="archetypes.schemaextender" />
   <adapter
