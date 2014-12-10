@@ -12,6 +12,7 @@
   <include package="archetypes.linguakeywordwidget"/>
   <include package=".browser" />
 
+  <five:registerPackage package="." />
   <i18n:registerTranslations directory="locales" />
 
   <genericsetup:registerProfile
@@ -19,6 +20,13 @@
       title="collective.azindexpage"
       directory="profiles/default"
       description="Create a A-Z index page"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="collective.azindexpage: uninstall"
+      directory="profiles/uninstall"
+      description="Remove collective.azindexpage"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <genericsetup:importStep

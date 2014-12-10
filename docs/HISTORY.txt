@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.4 (unreleased)
+1.1.0 (unreleased)
 ------------------
 
 - Added Spanish translation [macagua]
@@ -13,6 +13,8 @@ Changelog
 - Added a log message when performing new index reindex operation
   [keul]
 - Import step dependency: be sure that catalog GS import step is run before
+  [keul]
+- Added an uninstall profile
   [keul]
 
 1.0.3 (2013-02-15)
